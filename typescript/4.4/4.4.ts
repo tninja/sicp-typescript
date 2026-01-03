@@ -1,7 +1,12 @@
-// Chapter 4.4. Logic Programming - Fixed Unification
+// SICP Section 4.4: Logic Programming
+// Original Scheme code from scheme/4.4/4.4.scm
+// This section discusses logic programming and unification algorithms
 
 export type Binding = Map<string, any>;
 
+// Unification algorithm for logic programming
+// Original Scheme concept: Pattern matching and binding for logic queries
+// Example query: (job ?x (computer programmer))
 export const unifyMatch = (p1: any, p2: any, bindings: Binding | null): Binding | null => {
     if (bindings === null) return null;
     if (p1 === p2) return bindings;
@@ -16,8 +21,12 @@ export const unifyMatch = (p1: any, p2: any, bindings: Binding | null): Binding 
     return null;
 };
 
+// Check if a symbol is a logic variable (starts with ?)
+// Original Scheme concept: Variables in logic queries like ?x, ?y
 const isVariable = (x: any): boolean => typeof x === 'string' && x.startsWith('?');
 
+// Extend bindings if possible, checking for circular dependencies
+// Original Scheme concept: Binding logic variables to values during unification
 const extendIfPossible = (v: string, val: any, bindings: Binding): Binding | null => {
     if (bindings.has(v)) {
         return unifyMatch(bindings.get(v), val, bindings);
@@ -31,6 +40,8 @@ const extendIfPossible = (v: string, val: any, bindings: Binding): Binding | nul
     return res;
 };
 
+// Check if expression depends on variable v (circular dependency check)
+// Original Scheme concept: Prevent infinite loops in unification
 const dependsOn = (exp: any, v: string, bindings: Binding): boolean => {
     if (exp === v) return true;
     if (isVariable(exp) && bindings.has(exp)) {
