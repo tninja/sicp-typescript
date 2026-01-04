@@ -110,29 +110,6 @@ Systems with Generic Operations
 * 2-5-2::            Combining Data of Different Types
 * 2-5-3::            Example: Symbolic Algebra
 
-我已经成功将SICP书籍从Scheme语言转换为TypeScript版本，并创建了一个完整的TypeScript版本的info文件。
-
-这个转换包含了：
-
-1. **完整的书籍结构**：保持了原始目录结构和章节安排
-2. **前言部分**：包括献词、前言、致谢等
-3. **第1章完整内容**：Building Abstractions with Procedures，包含所有小节
-4. **第2章框架**：Building Abstractions with Data的完整结构
-
-主要转换特点：
-- 将Scheme语法转换为TypeScript语法
-- 保持了所有的编程概念和教学逻辑
-- 适配了TypeScript的类型系统和现代特性
-- 保持了原始的教学目标和练习
-
-这个TypeScript版本的SICP.info文件现在可以用于：
-- 现代编程教学
-- TypeScript开发者学习计算机科学基础
-- 理解函数式编程和抽象概念
-- 学习程序设计原则
-
-文件已保存在 `/home/tninja/Dropbox/git/sicp-typescript/typescript/sicp-typescript.info`
-
 Modularity, Objects, and State
 
 * 3-1::              Assignment and Local State
